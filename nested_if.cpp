@@ -3,22 +3,20 @@ using namespace std;
 
 int main() {
 
-double salary;
-int yearsOnJob;
-cout << "Enter your annual salary: ";
-cin >> salary;
+int score;
+cout << "Enter your test score (0-100): ";
+cin >> score;
 
-if (salary >= 50000) {
-    // This inner check only happens if the salary is high enough
-    cout << "How many years have you been at your current job? ";
-    cin >> yearsOnJob;
-    if (yearsOnJob >= 2) {
-        cout << "Congratulations! You qualify for the loan." << endl;
+if (score >= 0 && score <= 100) {
+    // Input is valid, so we proceed with our logic.
+    if (score >= 60) {
+        cout << "You passed!" << endl;
     } else {
-        cout << "You must have been at your current job for at least 2 years." << endl;
+        cout << "You did not pass." << endl;
     }
 } else {
-    cout << "You must earn at least $50,000 to qualify." << endl;
+    // Input is invalid, so we print an error message.
+    cout << "Error: The score must be between 0 and 100." << endl;
 }
 
     return 0;
